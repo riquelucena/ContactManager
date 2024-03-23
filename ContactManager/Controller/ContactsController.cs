@@ -17,14 +17,16 @@ namespace ContactManager.Controllers
         }
 
         [HttpPost]
-        public IActionResult ContactRegistry([FromBody] ContactModel contact)
+        public IActionResult ContactRegistry(ContactModel contact)
         {
             try
             {
+                _addContactsBusiness.Add(contact);
                 return Ok();
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "An error occurred while registering the contact.");
                 return StatusCode(500, "Internal Server Error");
             }
         }
