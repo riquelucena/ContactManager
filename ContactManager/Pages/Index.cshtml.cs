@@ -1,20 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using ContactManager.Interfaces;
+using ContactManager.Model;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WebApplication1.Pages
+namespace ContactManager.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly IGetAllContactsBusiness _getAllContactsBusiness;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(IGetAllContactsBusiness getAllContactsBusiness)
         {
-            _logger = logger;
+            _getAllContactsBusiness = getAllContactsBusiness;
         }
+
+        public IList<ContactModel> Contacts { get; set; }
 
         public void OnGet()
         {
-
+            Contacts = _getAllContactsBusiness.GetAll();
         }
     }
 }
