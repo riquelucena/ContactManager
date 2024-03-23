@@ -13,9 +13,10 @@ namespace ContactManager.Business
             _contactRepository = contactRepository;
         }
 
-        public void Add(ContactModel contact)
+        public async Task AddAsync(ContactModel contact)
         {
-            _contactRepository.Add(contact);
+            await _contactRepository.AddAsync(contact);
         }
+
     }
 }

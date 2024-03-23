@@ -12,9 +12,9 @@ namespace ContactManager.Business
             _contactRepository = contactRepository;
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            _contactRepository.Delete(id);
+            _contactRepository.DeleteAsync(id);
         }
     }
 }

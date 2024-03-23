@@ -13,8 +13,8 @@ namespace ContactManager.Business
             _contactRepository = contactRepository;
         }
 
-        public void Update(ContactModel contact)
+        public async Task UpdateAsync(ContactModel contact)
         {
-            _contactRepository.Update(contact);
+            await _contactRepository.UpdateAsync(contact);
         }
     }}

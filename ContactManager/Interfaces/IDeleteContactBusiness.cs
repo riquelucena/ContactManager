@@ -2,6 +2,6 @@
 {
     public interface IDeleteContactBusiness
     {
-        void Delete(int id);
+        Task DeleteAsync(int id);
     }
 }

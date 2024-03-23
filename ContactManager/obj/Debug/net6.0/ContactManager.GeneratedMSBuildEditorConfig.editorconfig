@@ -16,16 +16,32 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\PROJETOS\ContactManager\ContactManager
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/PROJETOS/ContactManager/ContactManager/Pages/ContactDetailsPagecshtml.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdERldGFpbHNQYWdlY3NodG1sLmNzaHRtbA==
+[C:/PROJETOS/ContactManager/ContactManager/Pages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/PROJETOS/ContactManager/ContactManager/Pages/ContractRegistryPage.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udHJhY3RSZWdpc3RyeVBhZ2UuY3NodG1s
+[C:/PROJETOS/ContactManager/ContactManager/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/PROJETOS/ContactManager/ContactManager/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROJETOS/ContactManager/ContactManager/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROJETOS/ContactManager/ContactManager/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROJETOS/ContactManager/ContactManager/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROJETOS/ContactManager/ContactManager/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/PROJETOS/ContactManager/ContactManager/Pages/Shared/_Layout.cshtml]

@@ -13,9 +13,9 @@ namespace ContactManager.Business
             _contactRepository = contactRepository;
         }
 
-        public IList<ContactModel> GetAll()
+        public async Task<IList<ContactModel>> GetAllAsync()
         {
-            return _contactRepository.GetAll();
+            return await _contactRepository.GetAllAsync();
         }
     }
 }

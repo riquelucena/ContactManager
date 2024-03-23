@@ -4,6 +4,6 @@ namespace ContactManager.Interfaces
 {
     public interface IUpdateContactBusiness
     {
-        void Update(ContactModel contact);
+        Task UpdateAsync(ContactModel contact);
     }
 }
