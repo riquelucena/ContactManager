@@ -5,7 +5,7 @@ namespace ContactManager.Service
 {
     internal class ContactDbContext : DbContext
     {
-        public DbSet<ContactModel> Drugs { get; set; }
+        public DbSet<ContactModel> Contacts { get; set; }
 
         public ContactDbContext(DbContextOptions<ContactDbContext> options) : base(options)
         {
