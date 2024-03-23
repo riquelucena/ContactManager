@@ -5,33 +5,37 @@ namespace ContactManager.Repository
 {
     public class ContactRepository : IContactRepository
     {
-        private static IList<ContactModel> contacts = new List<ContactModel>();
-        private static int lastId = 0;
-
+        private readonly ContactDbContext _context;
+        
+        public ContactRepository(ContactDbContext context)
+        {
+            _context = context;
+        }
         public void Add(ContactModel contact)
         {
-            contact.ID = ++lastId;
-            contacts.Add(contact);
+            _context.Contacts.Add(contact);
+            _context.SaveChanges();
         }
 
         public IList<ContactModel> GetAll()
         {
-            return contacts.ToList();
+            return _context.Contacts.ToList();
         }
 
         public ContactModel GetById(int id)
         {
-            return contacts.FirstOrDefault(x => x.ID == id);
+            return _context.Contacts.FirstOrDefault(x => x.ID == id);
         }
 
         public void Update(ContactModel contact)
         {
-            var existingContact = contacts.FirstOrDefault(x => x.ID == contact.ID);
-            if (existingContact != null)
+            var existContact = _context.Contacts.FirstOrDefault(x => x.ID == contact.ID);
+            if (existContact != null)
             {
-                existingContact.Name = contact.Name;
-                existingContact.PhoneNumber = contact.PhoneNumber;
-                existingContact.Email = contact.Email;
+                existContact.Name = contact.Name;
+                existContact.PhoneNumber = contact.PhoneNumber;
+                existContact.Email = contact.Email;
+                _context.SaveChanges();
             }
             else
             {
@@ -41,10 +45,11 @@ namespace ContactManager.Repository
 
         public void Delete(int id)
         {
-            var contactToRemove = contacts.FirstOrDefault(x => x.ID == id);
-            if (contactToRemove != null)
+            var contactRemove = _context.Contacts.FirstOrDefault(x => x.ID == id);
+            if (contactRemove != null)
             {
-                contacts.Remove(contactToRemove);
+                _context.Contacts.Remove(contactRemove);
+                _context.SaveChanges();
             }
             else
             {
