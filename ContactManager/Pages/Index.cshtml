@@ -1,10 +1,31 @@
 ﻿@page
-@model IndexModel
+@model ContactManager.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Contact Index";
+    Layout = "_Layout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Contact Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <!-- Adicione outras colunas conforme necessário -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model.Contacts)
+        {
+            <tr>
+                <td>@contact.ID</td>
+                <td>@contact.Name</td>
+                <td>@contact.Email</td>
+                <!-- Adicione outras colunas conforme necessário -->
+            </tr>
+        }
+    </tbody>
+</table>
+
