@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\PROJETOS\ContactManager\ContactManager
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/PROJETOS/ContactManager/ContactManager/Pages/ContactRegistry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdFJlZ2lzdHJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/PROJETOS/ContactManager/ContactManager/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
