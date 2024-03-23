@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ContactManager.Service
 {
-    internal class ContactDbContext : DbContext
+    public class ContactDbContext : DbContext
     {
         public DbSet<ContactModel> Contacts { get; set; }
 
