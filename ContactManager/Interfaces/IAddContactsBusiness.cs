@@ -1,8 +1,8 @@
 ﻿using ContactManager.Model;
 
-namespace ContactManager.Repository
+namespace ContactManager.Interfaces
 {
-    public interface IContactRepository
+    public interface IAddContactsBusiness
     {
         void Add(ContactModel contact);
     }

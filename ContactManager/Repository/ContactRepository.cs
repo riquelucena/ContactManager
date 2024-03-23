@@ -1,10 +1,19 @@
-﻿using ContactManager.Service;
+﻿using ContactManager.Model;
+using ContactManager.Service;
 
 namespace ContactManager.Repository
 {
     public class ContactRepository : IContactRepository
     {
-        private readonly ContactDbContext _dbContext;
+        private static IList<ContactModel> contacts = new List<ContactModel>();
+        private static int lastId = 0;
 
+        public void Add(ContactModel contact)
+        {
+            contact.ID = ++lastId;
+            contacts.Add(contact);
+        }
     }
 }
+
+
