@@ -1,0 +1,8 @@
+C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0\ContactManager.csproj.AssemblyReference.cache
+C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0\ContactManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0\ContactManager.AssemblyInfoInputs.cache
+C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0\ContactManager.AssemblyInfo.cs
+C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0\ContactManager.csproj.CoreCompileInputs.cache
+C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0\ContactManager.MvcApplicationPartsAssemblyInfo.cache
+C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0\ContactManager.RazorAssemblyInfo.cache
+C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0\ContactManager.RazorAssemblyInfo.cs
