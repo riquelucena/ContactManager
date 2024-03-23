@@ -4,6 +4,6 @@ namespace ContactManager.Interfaces
 {
     public interface IGetByIdContactBusiness
     {
-        ContactModel GetById(int id);
+        Task<ContactModel> GetByIdAsync(int id);
     }
 }

@@ -4,6 +4,6 @@ namespace ContactManager.Interfaces
 {
     public interface IGetAllContactsBusiness
     {
-        IList<ContactModel> GetAll();
+        Task<IList<ContactModel>> GetAllAsync();
     }
 }

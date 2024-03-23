@@ -4,6 +4,6 @@ namespace ContactManager.Interfaces
 {
     public interface IAddContactsBusiness
     {
-        void Add(ContactModel contact);
+        Task AddAsync(ContactModel contact);
     }
 }

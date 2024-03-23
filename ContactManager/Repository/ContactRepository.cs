@@ -1,5 +1,6 @@
 ﻿using ContactManager.Model;
 using ContactManager.Service;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContactManager.Repository
 {
@@ -11,31 +12,31 @@ namespace ContactManager.Repository
         {
             _context = context;
         }
-        public void Add(ContactModel contact)
+        public async Task AddAsync(ContactModel contact)
         {
             _context.Contacts.Add(contact);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public IList<ContactModel> GetAll()
+        public async Task<IList<ContactModel>> GetAllAsync()
         {
-            return _context.Contacts.ToList();
+            return await _context.Contacts.ToListAsync();
         }
 
-        public ContactModel GetById(int id)
+        public async Task<ContactModel> GetByIdAsync(int id)
         {
-            return _context.Contacts.FirstOrDefault(x => x.ID == id);
+            return await _context.Contacts.FirstOrDefaultAsync(x => x.ID == id);
         }
 
-        public void Update(ContactModel contact)
+        public async Task UpdateAsync(ContactModel contact)
         {
-            var existContact = _context.Contacts.FirstOrDefault(x => x.ID == contact.ID);
+            var existContact = await _context.Contacts.FirstOrDefaultAsync(x => x.ID == contact.ID);
             if (existContact != null)
             {
                 existContact.Name = contact.Name;
                 existContact.PhoneNumber = contact.PhoneNumber;
                 existContact.Email = contact.Email;
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
             else
             {
@@ -43,13 +44,13 @@ namespace ContactManager.Repository
             }
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            var contactRemove = _context.Contacts.FirstOrDefault(x => x.ID == id);
+            var contactRemove = await _context.Contacts.FirstOrDefaultAsync(x => x.ID == id);
             if (contactRemove != null)
             {
                 _context.Contacts.Remove(contactRemove);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
             else
             {

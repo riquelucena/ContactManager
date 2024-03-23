@@ -13,9 +13,9 @@ namespace ContactManager.Business
             _contactRepository = contactRepository;
         }
 
-        public ContactModel GetById(int id)
+        public async Task<ContactModel> GetByIdAsync(int id)
         {
-            return _contactRepository.GetById(id);
+            return await _contactRepository.GetByIdAsync(id);
         }
     }
 }
