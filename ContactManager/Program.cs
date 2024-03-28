@@ -38,7 +38,12 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
+//app.MapRazorPages();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+});
 
 using var scope = app.Services.CreateScope();
 using var context = scope.ServiceProvider.GetService<ContactDbContext>();

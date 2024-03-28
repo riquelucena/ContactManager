@@ -4,7 +4,7 @@ using ContactManager.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WebApplication2.Pages
+namespace ContactManager.Pages
 {
     public class IndexModel : PageModel
     {
@@ -19,20 +19,18 @@ namespace WebApplication2.Pages
             _getAllContactsBusiness = getAllContactsBusiness;
         }
 
-        public async Task<IActionResult> GetAllContacts()
+        public IList<ContactModel> Contacts { get; set; }
+
+        public async Task OnGetAsync()
         {
             try
             {
-                var contacts = await _getAllContactsBusiness.GetAllAsync();
-                return new OkObjectResult(contacts);
+                Contacts = await _getAllContactsBusiness.GetAllAsync();
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while fetching all contacts.");
-                return StatusCode(500, "Internal Server Error");
             }
-        }
-
-        public IList<ContactModel> Contacts { get; set; }
+        }        
     }
 }

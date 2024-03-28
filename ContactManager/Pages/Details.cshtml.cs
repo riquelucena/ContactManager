@@ -1,10 +1,7 @@
-using ContactManager.Business;
 using ContactManager.Interfaces;
 using ContactManager.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-using System.Threading.Tasks;
 
 namespace ContactManager.Pages
 {
@@ -29,44 +26,50 @@ namespace ContactManager.Pages
             _deleteContactBusiness = deleteContactBusiness;
         }
 
-        public async Task<IActionResult> GetContactById(int id)
+        public async Task<IActionResult> OnGetAsync(int id)
         {
             try
             {
-                var contact = await _getByIdContactBusiness.GetByIdAsync(id);
-                if (contact == null)
+                Contact = await _getByIdContactBusiness.GetByIdAsync(id);
+                if (Contact == null)
+                {
                     return NotFound();
-
-                return StatusCode(200, contact);
+                }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, $"An error occurred while fetching contact with ID: {id}.");
                 return StatusCode(500, "Internal Server Error");
             }
+
+            return Page();
         }
 
-        public async Task<IActionResult> UpdateContact(int id, ContactModel contact)
+        public async Task<IActionResult> OnPostAsync()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
             try
             {
-                contact.ID = id;
-                await _updateContactBusiness.UpdateAsync(contact);
-                return StatusCode(200, contact);
+                await _updateContactBusiness.UpdateAsync(Contact);
+                return RedirectToPage("./Index");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"An error occurred while updating contact with ID: {id}.");
+                _logger.LogError(ex, $"An error occurred while updating contact with ID: {Contact.ID}.");
                 return StatusCode(500, "Internal Server Error");
             }
         }
 
-        public async Task<IActionResult> DeleteContact(int id)
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
             try
             {
                 await _deleteContactBusiness.DeleteAsync(id);
-                return StatusCode(200, "Deleted contact.");
+                return RedirectToPage("./Index");
             }
             catch (Exception ex)
             {
@@ -76,4 +79,3 @@ namespace ContactManager.Pages
         }
     }
 }
-
