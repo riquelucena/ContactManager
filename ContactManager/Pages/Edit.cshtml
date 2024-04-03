@@ -1,0 +1,55 @@
+﻿@page
+@model EditModel
+@{
+    ViewData["Title"] = "Edit Contact";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Contact.ID" />
+    <div class="form-group">
+        <label asp-for="Contact.Name"></label>
+        <input asp-for="Contact.Name" class="form-control" />
+        <span asp-validation-for="Contact.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Contact.PhoneNumber"></label>
+        <input asp-for="Contact.PhoneNumber" class="form-control" />
+        <span asp-validation-for="Contact.PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Contact.Email"></label>
+        <input asp-for="Contact.Email" class="form-control" />
+        <span asp-validation-for="Contact.Email" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+<div id="successMessage" class="alert alert-success" style="display: none;">
+    Contact Updated Successfully!
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var form = event.target;
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('successMessage').style.display = 'block';
+                    } else {
+                        console.error('Error updating contact');
+                    }
+                })
+                .catch(error => console.error('Network Error:', error));
+        });
+    </script>
+}

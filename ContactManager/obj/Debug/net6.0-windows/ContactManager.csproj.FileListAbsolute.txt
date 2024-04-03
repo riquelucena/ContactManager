@@ -262,3 +262,5 @@ C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0-windows\refint\Contac
 C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0-windows\ContactManager.pdb
 C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0-windows\ContactManager.genruntimeconfig.cache
 C:\PROJETOS\ContactManager\ContactManager\obj\Debug\net6.0-windows\ref\ContactManager.dll
+C:\PROJETOS\ContactManager\ContactManager\bin\Debug\net6.0-windows\package-lock.json
+C:\PROJETOS\ContactManager\ContactManager\bin\Debug\net6.0-windows\package.json
