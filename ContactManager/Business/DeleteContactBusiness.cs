@@ -14,7 +14,7 @@ namespace ContactManager.Business
 
         public async Task DeleteAsync(int id)
         {
-            _contactRepository.DeleteAsync(id);
+           await _contactRepository.DeleteAsync(id);
         }
     }
 }

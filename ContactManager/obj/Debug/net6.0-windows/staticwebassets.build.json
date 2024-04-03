@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c7sMQ0U/ql5cVTwhaC4qAPIeskQwEzsFhDA5mPyT7qw=",
+  "Hash": "VIXVoM1sAQgs+NrItx0VPCT2nFxiqaT6EtrEvopcE9A=",
   "Source": "ContactManager",
   "BasePath": "_content/ContactManager",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\PROJETOS\\ContactManager\\ContactManager\\wwwroot\\css\\WebApplication2.styles.css",
+      "SourceId": "ContactManager",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROJETOS\\ContactManager\\ContactManager\\wwwroot\\",
+      "BasePath": "_content/ContactManager",
+      "RelativePath": "css/WebApplication2.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\WebApplication2.styles.css"
     },
     {
       "Identity": "C:\\PROJETOS\\ContactManager\\ContactManager\\wwwroot\\favicon.ico",

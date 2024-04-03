@@ -2,6 +2,8 @@
 using ContactManager.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
+using System.Threading.Tasks;
 
 namespace ContactManager.Pages
 {
@@ -21,11 +23,12 @@ namespace ContactManager.Pages
             _addContactsBusiness = addContactsBusiness;
         }
 
-        public async Task<IActionResult> ContactRegistry(ContactModel contact)
+        public async Task<IActionResult> OnPostAsync(ContactModel contact)
         {
             try
             {
                 await _addContactsBusiness.AddAsync(contact);
+                Contact = new ContactModel();
                 return Page();
             }
             catch (Exception ex)
@@ -34,5 +37,6 @@ namespace ContactManager.Pages
                 return StatusCode(500, "Internal Server Error");
             }
         }
+
     }
 }

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ContactManager.bundle.scp.css"
     },
     {
+      "Id": "C:\\PROJETOS\\ContactManager\\ContactManager\\wwwroot\\css\\WebApplication2.styles.css",
+      "PackagePath": "staticwebassets\\css\\WebApplication2.styles.css"
+    },
+    {
       "Id": "C:\\PROJETOS\\ContactManager\\ContactManager\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
